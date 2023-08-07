@@ -199,6 +199,7 @@ header a {
   letter-spacing: 0.04em;
   color: var(--white);
   border: none;
+  border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -274,9 +275,6 @@ header a {
 }
 
 .team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: calc((100% - 72px) / 4);
 
   border-radius: 0px 0px 4px 4px;
@@ -290,12 +288,17 @@ header a {
   margin-right: 24px;
 }
 
+.team-member-data {
+  padding: 32px 0;
+}
+
 .team-member-img {
   padding-bottom: 32px;
 }
 
 .team-member-name {
-  padding-bottom: 8px;
+  text-align: center;
+  margin-bottom: 8px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
@@ -304,6 +307,7 @@ header a {
 }
 
 .team-member-position {
+  text-align: center;
   padding-bottom: 32px;
   font-size: 16px;
   line-height: 1.5;
@@ -371,8 +375,6 @@ header a {
 
 .projects-item {
   width: calc((100% - 48px) / 3);
-
-  border-bottom: 1px solid var(--accent, #e7e9fc);
 }
 
 .projects-item:not(:nth-child(3n)) {
@@ -390,7 +392,9 @@ header a {
 }
 
 .projects-link-data {
+  width: 100%;
   padding: 32px 16px;
+  border-bottom: 1px solid var(--accent, #e7e9fc);
 }
 
 .projects-title {
