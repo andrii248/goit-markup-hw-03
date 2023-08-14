@@ -266,7 +266,6 @@ header a {
 }
 
 .team {
-  padding-top: 120px;
   background-color: var(--cloud);
 }
 
@@ -292,10 +291,6 @@ header a {
   padding: 32px 0;
 }
 
-.team-member-img {
-  padding-bottom: 32px;
-}
-
 .team-member-name {
   text-align: center;
   margin-bottom: 8px;
@@ -308,7 +303,6 @@ header a {
 
 .team-member-position {
   text-align: center;
-  padding-bottom: 32px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -394,7 +388,8 @@ header a {
 .projects-link-data {
   width: 100%;
   padding: 32px 16px;
-  border-bottom: 1px solid var(--accent, #e7e9fc);
+  border: 1px solid var(--accent, #e7e9fc);
+  border-top: none;
 }
 
 .projects-title {
