@@ -11,22 +11,8 @@
   --background-modal: #fcfcfc;
 }
 
-.list {
-  list-style: none;
-}
-
-.link {
-  text-decoration: none;
-  font-style: normal;
-}
-
-.link:hover,
-.link:focus {
-  color: var(--ocean);
-}
-
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--slate);
   background-color: var(--white);
 }
@@ -36,7 +22,7 @@ h2,
 h3,
 h4,
 h5,
-h5,
+h6,
 p {
   margin-top: 0;
   margin-bottom: 0;
@@ -59,6 +45,24 @@ button {
   cursor: pointer;
 }
 
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  font-style: normal;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--ocean);
+}
+
+.section {
+  padding: 120px 0;
+}
+
 .container {
   width: 1158px;
   padding-left: 15px;
@@ -67,47 +71,9 @@ button {
   margin-right: auto;
 }
 
-.section {
-  padding: 120px 0;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-/* ============== PAGE HEADER ============== */
-
-.page-header {
-  border-bottom: 1px solid var(--accent, #e7e9fc);
-}
-
-header a {
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
-.page-header-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.page-header-nav {
-  display: flex;
-  align-items: center;
-}
-
 .page-logo {
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
@@ -119,17 +85,32 @@ header a {
   color: var(--navyblue);
 }
 
-.page-header-logo {
-  margin-right: 76px;
+/* #region Header */
+.page-header-container {
+  display: flex;
+  padding: 24px 0;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid var(--accent);
+  background: var(--white);
+}
+
+.page-header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 76px;
 }
 
 .page-header-list {
   display: flex;
+  gap: 40px;
 }
 
-.page-header-item:not(:last-child),
-.page-header-contact-item:not(:last-child) {
-  margin-right: 40px;
+.page-header-contacts-list {
+  display: flex;
+  gap: 40px;
 }
 
 .page-header-link {
@@ -138,11 +119,6 @@ header a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--navyblue);
-}
-
-.page-header-contacts-list {
-  display: flex;
-  align-items: center;
 }
 
 .page-header-contact {
@@ -159,26 +135,25 @@ header a {
 
 .page-header-contacts {
   font-style: normal;
-  display: flex;
-  align-items: center;
 }
-
-/* ============== /PAGE HEADER ============== */
-
-/* ============== STUDIO MAIN ============== */
+/* #endregion Header */
 
 .hero {
-  padding-top: 188px;
-  padding-bottom: 188px;
   background-color: var(--navyblue);
 }
 
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
 .main-title {
-  margin-bottom: 48px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 496px;
+  height: 120px;
   text-align: center;
-  max-width: 496px;
   font-size: 56px;
   line-height: 1.07;
   letter-spacing: 0.02em;
@@ -186,12 +161,9 @@ header a {
 }
 
 .hero-btn {
-  min-width: 169px;
-  height: 56px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   padding: 16px 32px;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   background-color: var(--iris);
   font-weight: 500;
@@ -200,6 +172,7 @@ header a {
   color: var(--white);
   border: none;
   border-radius: 4px;
+
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -209,7 +182,6 @@ header a {
 }
 
 .section-title {
-  margin-bottom: 72px;
   text-align: center;
   font-size: 36px;
   line-height: 1.11;
@@ -218,24 +190,20 @@ header a {
   color: var(--navyblue);
 }
 
-.benefits {
-  padding: 120px 0;
-}
-
+/* #region Benefits */
 .benefits-list {
   display: flex;
+  gap: 24px;
 }
 
 .benefits-item {
-  width: calc((100% - 48px) / 4);
-}
-
-.benefits-item:not(:last-child) {
-  margin-right: 24px;
+  flex-basis: calc((100% - 3 * 24px) / 4);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .benefits-title {
-  margin-bottom: 8px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
@@ -248,52 +216,51 @@ header a {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+/* #endregion Benefits */
 
-.products {
-  padding-bottom: 120px;
-}
-
-.products-list {
-  display: flex;
-}
-
-.products-item {
-  width: calc((100% - 48px) / 3);
-}
-
-.products-item:not(:last-child) {
-  margin-right: 24px;
-}
-
+/* #region Team */
 .team {
   background-color: var(--cloud);
 }
 
+.team .container {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
 .team-list {
   display: flex;
+  gap: 24px;
 }
 
 .team-member {
-  width: calc((100% - 72px) / 4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc((100% - 3 * 24px) - 4);
+  background-color: var(--white);
 
   border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+
+  box-shadow:
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-  background-color: var(--white);
+  background: var(--white);
 }
 
-.team-member:not(:last-child) {
-  margin-right: 24px;
-}
+.team-member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
-.team-member-data {
   padding: 32px 0;
+  align-items: center;
 }
 
 .team-member-name {
-  text-align: center;
-  margin-bottom: 8px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
@@ -302,126 +269,63 @@ header a {
 }
 
 .team-member-position {
-  text-align: center;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
 
-.footer {
-  background-color: var(--navyblue);
-}
+/* #endregion Team */
 
-.page-logo-footer {
-  color: var(--cloud);
-}
+/* #region Portgolio */
 
-/* ============== /STUDIO MAIN============== */
-
-/* ============== PORTFOLIO MAIN ============== */
-
-.filter {
-  padding-top: 96px;
-  padding-bottom: 120px;
-}
-
-.filter-list {
-  display: flex;
-  justify-content: center;
-
-  margin-bottom: 72px;
-}
-
-.filter-item:not(:last-child) {
-  margin-right: 24px;
-}
-
-.filter-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 24px;
-
-  font-family: "Roboto", sans-serif;
-  border-style: none;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: var(--iris);
-
-  border-radius: 4px;
-  border: 1px solid var(--accent, #e7e9fc);
-  background-color: var(--cloud, #f4f4fd);
-}
-
-.filter-btn:hover,
-.filter-btn:focus {
-  background-color: var(--ocean);
-  color: var(--white);
-  border: 1px solid transparent;
-}
-
-.projects-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.projects-item {
-  width: calc((100% - 48px) / 3);
-}
-
-.projects-item:not(:nth-child(3n)) {
-  margin-right: 24px;
-}
-
-.projects-item:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 48px;
-}
-
-.projects-link {
+.portfolio .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 72px;
 }
 
-.projects-link-data {
-  width: 100%;
-  padding: 32px 16px;
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 48px;
+}
+
+.portfolio-item {
+  flex-basis: calc((100% - 3 * 24px) / 3);
+}
+
+.portfolio-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 16px;
+
+  box-sizing: border-box;
+  /* CORNFLOWER */
   border: 1px solid var(--accent, #e7e9fc);
   border-top: none;
 }
 
-.projects-title {
-  margin-bottom: 8px;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  color: var(--navyblue);
-}
-
-.projects-tag {
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--slate);
-}
-
-/* ============== /PORTFOLIO MAIN ============== */
-
-/* ============== FOOTER ============== */
+/* #endregion Portgolio */
 
 .footer {
-  padding-top: 100px;
-  padding-bottom: 100px;
-
   display: flex;
+  padding: 100px 0;
+  background-color: var(--navyblue);
 }
 
 .footer-logo {
   display: inline-block;
+
   margin-bottom: 16px;
+}
+
+.page-logo-footer {
+  color: var(--cloud);
 }
 
 .footer-text {
@@ -431,5 +335,3 @@ header a {
   letter-spacing: 0.02em;
   color: var(--cloud);
 }
-
-/* ============== /FOOTER ============== */
