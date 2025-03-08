@@ -65,10 +65,22 @@ button {
 
 .container {
   width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .page-logo {
@@ -86,13 +98,16 @@ button {
 }
 
 /* #region Header */
+.page-header {
+  border-bottom: 1px solid var(--accent);
+}
+
 .page-header-container {
   display: flex;
   padding: 24px 0;
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 1px solid var(--accent);
   background: var(--white);
 }
 
@@ -100,7 +115,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 76px;
+}
+
+.page-logo-header {
+  margin-right: 76px;
 }
 
 .page-header-list {
@@ -114,6 +132,7 @@ button {
 }
 
 .page-header-link {
+  padding: 24px 0;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -139,20 +158,25 @@ button {
 /* #endregion Header */
 
 .hero {
+  padding: 188px 0;
+
   background-color: var(--navyblue);
 }
 
-.hero .container {
+/* .hero .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 48px;
-}
+} */
 
 .main-title {
-  width: 496px;
+  max-width: 496px;
   height: 120px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 48px;
   text-align: center;
   font-size: 56px;
   line-height: 1.07;
@@ -162,7 +186,11 @@ button {
 
 .hero-btn {
   display: block;
+  margin-right: auto;
+  margin-left: auto;
   padding: 16px 32px;
+  min-width: 169px;
+  height: 56px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   background-color: var(--iris);
@@ -191,6 +219,7 @@ button {
 }
 
 /* #region Benefits */
+
 .benefits-list {
   display: flex;
   gap: 24px;
@@ -200,10 +229,10 @@ button {
   flex-basis: calc((100% - 3 * 24px) / 4);
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
 .benefits-title {
+  margin-bottom: 8px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
@@ -223,10 +252,8 @@ button {
   background-color: var(--cloud);
 }
 
-.team .container {
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
+.team-title {
+  margin-bottom: 72px;
 }
 
 .team-list {
@@ -254,21 +281,22 @@ button {
 .team-member-info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 
   padding: 32px 0;
-  align-items: center;
 }
 
 .team-member-name {
+  margin-bottom: 8px;
   font-size: 20px;
   font-weight: 500;
+  text-align: center;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--navyblue);
 }
 
 .team-member-position {
+  text-align: center;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -276,15 +304,18 @@ button {
 
 /* #endregion Team */
 
-/* #region Portgolio */
+/* #region Portfolio */
 
 .portfolio .container {
   display: flex;
   flex-direction: column;
-  gap: 72px;
 }
 
-.portfolio-list {
+.portfolio .section-title {
+  margin-bottom: 72px;
+}
+
+.portfolio .portfolio-list {
   display: flex;
   flex-wrap: wrap;
   column-gap: 24px;
@@ -298,19 +329,20 @@ button {
 .portfolio-item-info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 
-  padding-top: 32px;
-  padding-bottom: 32px;
-  padding-left: 16px;
+  padding: 32px 16px;
 
   box-sizing: border-box;
-  /* CORNFLOWER */
+
   border: 1px solid var(--accent, #e7e9fc);
   border-top: none;
 }
 
-/* #endregion Portgolio */
+.portfolio-title {
+  margin-bottom: 8px;
+}
+
+/* #endregion Portfolio */
 
 .footer {
   display: flex;
