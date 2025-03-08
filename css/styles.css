@@ -97,14 +97,18 @@ button {
 }
 
 /* #region Header */
+
 .page-header {
   border-bottom: 1px solid var(--accent);
 }
 
-.page-header-container {
-  display: flex;
+.page-header .page-logo-header {
   padding-top: 24px;
   padding-bottom: 24px;
+}
+
+.page-header-container {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 
