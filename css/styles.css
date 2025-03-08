@@ -59,14 +59,14 @@ button {
   color: var(--ocean);
 }
 
-.section {
-  padding: 120px 0;
-}
-
 .container {
   width: 1158px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.section {
+  padding: 120px 0;
 }
 
 .visually-hidden {
